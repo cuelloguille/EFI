@@ -1,0 +1,39 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mb-4">Agregar Vendedor</h2>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="pais">Nombre del País</label>
+                    <input type="text" class="form-control"  id="pais" name="pais" placeholder="Nombre de país" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad_ventas">Cantidad de Ventas</label>
+                    <input type="number" class="form-control" id="cantidad_ventas" name="cantidad_ventas" placeholder="Cantidad de ventas" required>
+                </div>
+                <div class="form-group">
+                    <label for="total_ganancias">Total de Ganancias</label>
+                    <input type="number" class="form-control" id="total_ganancias" name="total_ganancias" placeholder="Total de ganancias" required>
+                </div>
+                <button type="submit" class="btn btn-success">Guardar Vendedor</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-4">Lista de Vendedores</h2>
+            <ul class="list-group">
+                {% for vendedor in vendedores %}
+                    <li class="list-group-item">
+                        <strong>id:</strong> {{ vendedor.id_vendedor }}<br>
+                        <strong>País:</strong> {{ vendedor.pais }}<br>
+                        <strong>Cantidad de Productos Vendidos:</strong> {{ vendedor.cantidad_de_productos_vendidos }}<br>
+                        <strong>Total Ganado:</strong> {{ vendedor.total_ganado }}<br>
+                        <a href="{{ url_for('editar_vendedor', id=vendedor.id_vendedor) }}" class="btn btn-warning btn-sm">Editar</a> <!-- Botón de edición -->
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+{% endblock %}

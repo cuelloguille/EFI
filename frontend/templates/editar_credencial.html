@@ -1,0 +1,32 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+<div class="container py-4">
+    <h4>Editar Credencial</h4>
+    <form action="" method="post" class="p-3 border rounded bg-light">
+        <input type="hidden" name="id" value="{{ credencial.id_vendedor }}">
+        
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre del vendedor" value="{{ credencial.nombre_usuario }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="contrasena" class="form-label">Contraseña</label>
+            <input type="password" name="contrasena" class="form-control" placeholder="Contraseña" value="{{ credencial.contrasena }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" name="edad" class="form-control" placeholder="Edad" value="{{ credencial.edad }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo de Contacto</label>
+            <input type="email" name="correo" class="form-control" placeholder="Correo de contacto" value="{{ credencial.correo_contacto }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Actualizar</button>
+    </form>
+</div>
+{% endblock %}
