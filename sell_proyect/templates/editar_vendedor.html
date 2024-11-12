@@ -1,0 +1,22 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+<div class="container py-4">
+    <h4>Editar Vendedor</h4>
+    <form action="" method="post" class="p-3 border rounded bg-light">
+        <div class="form-group">
+            <label for="pais">Nombre del País</label>
+            <input type="text" class="form-control" id="pais" name="pais" placeholder="Nombre de país" value="{{ vendedor.pais }}" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidad_ventas">Cantidad de Ventas</label>
+            <input type="number" class="form-control" id="cantidad_ventas" name="cantidad_ventas" placeholder="Cantidad de ventas" value="{{ vendedor.cantidad_de_productos_vendidos }}" required>
+        </div>
+        <div class="form-group">
+            <label for="total_ganancias">Total de Ganancias</label>
+            <input type="number" class="form-control" id="total_ganancias" name="total_ganancias" placeholder="Total de ganancias" value="{{ vendedor.total_ganado }}" required>
+        </div>
+        <button type="submit" class="btn btn-success">Actualizar Vendedor</button>
+    </form>
+</div>
+{% endblock %}
